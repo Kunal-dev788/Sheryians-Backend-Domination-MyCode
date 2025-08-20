@@ -1,0 +1,10 @@
+Frontend ->(req) Backend ->(res) Frontend
+
+Frontend (Browser) se jo bhi cheeja Backend (Server) pe jaati hai usse req bolta hai.
+means Req ke andar hamari Browser ki saari information rahti hai.
+
+Backend (server) se jo bhi cheeja Frontend (Browser) pe aati hai yah server hammne request response bhejta hai usko res bolta hai 
+
+Tho final conclusion is 
+agar wo waha se (Browser / Frontend) kuch ha raha hai tho req me hoga
+agar yaha se (server /  Code Editor) kuch bhejna hai tho res me hoga

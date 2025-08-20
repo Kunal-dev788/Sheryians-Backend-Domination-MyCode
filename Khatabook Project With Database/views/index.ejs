@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <!-- Corrected path -->
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="">Khaatabook</a></li>
+        <li><a href="">Home</a></li>
+        <li>
+          <a href="/<%= encodeURIComponent(user.username) %>/createHisaab"
+            >Create New Hisaab</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="filters">
+      <button>Filters</button>
+      <button>By date</button>
+      <select>
+        <option>Newest First</option>
+        <option>Oldest First</option>
+      </select>
+    </div>
+
+    <div class="cards">
+      <% if (hisaabs.length > 0) { %> <% hisaabs.forEach(hisaab => { %>
+      <div class="card">
+        <% if (hisaab.isEncrypt) { %>
+        <span class="status encrypted">Encrypted</span>
+        <% } else { %>
+        <span class="status available">Available</span>
+        <% } %>
+        <h3><%= hisaab.title %></h3>
+
+        <% const d = new Date(hisaab.dateCreated); const formatted =
+        d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0')
+        + '-' + String(d.getUTCDate()).padStart(2, '0'); %>
+        
+        <small> <%= formatted %> </small>
+
+        <a
+          class="view-link"
+          href="/<%= encodeURIComponent(user.username) %>/viewHisaab/<%= encodeURIComponent(hisaab.id) %>"
+          >view hisaab</a
+        >
+      </div>
+      <% }) %> <% } else { %>
+      <p>Nothing to show</p>
+      <% } %>
+    </div>
+  </body>
+</html>

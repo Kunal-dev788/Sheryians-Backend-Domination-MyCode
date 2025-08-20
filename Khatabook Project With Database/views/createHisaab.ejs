@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create New Hisaab</title>
+  <link rel="stylesheet" href="/css/createHisaab.css" />
+</head>
+<body>
+  <header>
+    <div class="title">Khaatabook</div>
+  </header>
+
+  <main>
+    <h2>Create New Hisaab</h2>
+
+    <form action="/<%= encodeURIComponent(user) %>/createHisaab" method="POST">
+        <input type="text" name="title" placeholder="Shopping Hisaab..." required />
+        <textarea name="description" placeholder="Daal, Aata, Cheeni" rows="5"></textarea>
+
+        <div class="checkboxes">
+            <input type="checkbox" id="encrypt" name="isEncrypt" onchange="togglePasscode()" />
+            <label for="encrypt">Encrypt this file</label>
+        </div>
+
+        <input type="password" name="passcode" placeholder="Passcode" id="passcode" disabled />
+
+        <button type="submit" class="create-btn">Create New Hisaab</button>
+    </form>
+</main>
+
+
+  <script>
+    function togglePasscode() {
+      const encryptCheckbox = document.getElementById("encrypt");
+      const passcodeField = document.getElementById("passcode");
+      passcodeField.disabled = !encryptCheckbox.checked;
+    }
+  </script>
+</body>
+</html>

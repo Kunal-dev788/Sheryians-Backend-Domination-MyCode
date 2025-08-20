@@ -1,0 +1,9 @@
+Carry all the logic of our routes.
+Means -> if login route exists his logic will contain in this folder seperately (file) from other routes.
+
+if create route exists his logic will contain in this folder seperately (file) from other routes.
+
+if dashboard route exists his logic will contain in this folder seperately (file) from other routes.
+
+
+** Har ek pratik route ka logic

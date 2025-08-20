@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hisaab Details</title>
+    <link rel="stylesheet" href="/css/view.css" />
+    <!-- Corrected path -->
+  </head>
+  <body>
+     <nav>
+      <ul>
+        <li><a href="">Khaatabook</a></li>
+        <li><a href="/<%= encodeURIComponent(user.username) %>">Home</a></li>
+        <li>
+          <a href="/<%= encodeURIComponent(user.username) %>/createHisaab"
+            >Create New Hisaab</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="top-bar">
+        <% if (hisaabs.passcode) { %>
+        <span class="tag encrypted">🔒 Encrypted</span>
+        <% } else { %>
+        <span class="tag no-encrypted">No Encrypted</span>
+        <% } %>
+        <span class="tag delete"><a href="/<%= encodeURIComponent(user.username) %>/deleteHisaab/<%= encodeURIComponent(hisaabs.id) %>">Delete</a></span>
+
+        <span class="tag edit"><a href="/<%= encodeURIComponent(user.username) %>/editHisaab/<%= encodeURIComponent(hisaabs.id) %>">Edit</a></span>
+      </div>
+
+      <% const d = new Date(hisaabs.dateCreated); const formatted =
+        d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0')
+        + '-' + String(d.getUTCDate()).padStart(2, '0'); %>
+      <div class="date">
+        Created on <%= formatted %>
+      </div>
+
+      <h1 class="title"><%= hisaabs.title %></h1>
+
+      <p class="details"><%= hisaabs.description %></p>
+    </div>
+  </body>
+</html>

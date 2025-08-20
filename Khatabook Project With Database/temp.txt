@@ -1,0 +1,25 @@
+href="/<%= encodeURIComponent(user) %>/viewHisaab/<%= encodeURIComponent(hisaab.id) %>"
+
+[
+  {
+    title: 'Shopping List',
+    description: 'Daal, Atta, Cheeni..',
+    dateCreated: 2025-12-07T18:30:00.000Z,
+    isEncrypt: true,
+    passcode: '12345678',
+    _id: new ObjectId('689af75ee4f7b58bc5a85baf')
+  },
+    {
+    title: 'Shopping List',
+    description: 'Daal, Atta, Cheeni..',
+    dateCreated: 2025-12-07T18:30:00.000Z,
+    isEncrypt: true,
+    passcode: '12345678',
+    _id: new ObjectId('689af75ee4f7b58bc5a85baf')
+  }
+]
+
+
+create users, login users, users will create Hisaabs, users will view Hisaabs, users will edit Hisaabs, users will delete their hisaabs,
+
+login Home Page design link, hisaabs shorting from their dates, encrypted hisaab passcode asking functionality.

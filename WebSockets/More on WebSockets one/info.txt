@@ -1,0 +1,7 @@
+backend par io and socket dono hote hai.
+
+io jab app ek se jadha logo ko message dena chaate ho --> io
+jab app koi message ek user ko dena chaate ho --> Socket
+
+frontend par mainly socket variable hote hai
+socket

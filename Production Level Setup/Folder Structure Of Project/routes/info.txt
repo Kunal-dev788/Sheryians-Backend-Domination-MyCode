@@ -1,0 +1,3 @@
+Contain all the routes seperately means all the users routes will seperate from other routes
+
+same as post and other routes
